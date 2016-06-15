@@ -2,7 +2,7 @@ import argparse
 from .sub_commands import *
 
 COMMON_OPTIONS = [
-    ('--max', int, -1)
+    ('--max', int, -1),
 ]
 
 def get_arg_parser():
@@ -19,6 +19,9 @@ def get_arg_parser():
 
     for opt in COMMON_OPTIONS:
         sub_parser.add_argument(opt[0], type=opt[1], default=opt[2])
+    
+    sub_parser.add_argument('--orientation', type=str, choices=[ONLY_PORTRAIT, ONLY_LANDSCAPE], default=None)
+    sub_parser.add_argument('--json', action='store_true')
 
     # words
 
