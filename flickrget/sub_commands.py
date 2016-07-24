@@ -4,6 +4,8 @@ import sys
 ONLY_PORTRAIT = 'portrait'
 ONLY_LANDSCAPE = 'landscape'
 
+URL_TYPES = ['sq', 't', 's', 'q', 'm', 'n', 'z', 'c', 'l', 'o']
+
 def tag_search(api, args):
     page, pages = (0, 1)
     out_num = 0
@@ -12,7 +14,7 @@ def tag_search(api, args):
     portrait_only = args.orientation == ONLY_PORTRAIT
     landscape_only = args.orientation == ONLY_LANDSCAPE
 
-    url_type = 'l'
+    url_type = args.size
     url_tag = 'url_' + url_type
     width_tag = 'width_' + url_type
     height_tag = 'height_' + url_type

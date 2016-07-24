@@ -21,6 +21,7 @@ def get_arg_parser():
         sub_parser.add_argument(opt[0], type=opt[1], default=opt[2])
     
     sub_parser.add_argument('--orientation', type=str, choices=[ONLY_PORTRAIT, ONLY_LANDSCAPE], default=None)
+    sub_parser.add_argument('--size', type=str, choices=URL_TYPES, default='l')
     sub_parser.add_argument('--json', action='store_true')
 
     # words
