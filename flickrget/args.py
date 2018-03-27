@@ -2,7 +2,7 @@ import argparse
 from .sub_commands import *
 
 COMMON_OPTIONS = [
-    ('--max', int, -1),
+    ('--max', int, 4000),
 ]
 
 def get_arg_parser():
