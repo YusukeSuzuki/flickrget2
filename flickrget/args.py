@@ -2,7 +2,7 @@ import argparse
 from .sub_commands import *
 
 COMMON_OPTIONS = [
-    ('--max', int, 4000),
+    ('--max', int, 4000, 'max output num (default 4000 for api limitation reason)'),
 ]
 
 def get_arg_parser():
@@ -18,7 +18,7 @@ def get_arg_parser():
     sub_parser.add_argument('tags', metavar='Tag', type=str, nargs='+', help='tags for search')
 
     for opt in COMMON_OPTIONS:
-        sub_parser.add_argument(opt[0], type=opt[1], default=opt[2])
+        sub_parser.add_argument(opt[0], type=opt[1], default=opt[2], help=opt[3])
     
     sub_parser.add_argument('--orientation', type=str, choices=[ONLY_PORTRAIT, ONLY_LANDSCAPE], default=None)
     sub_parser.add_argument('--size', type=str, choices=URL_TYPES, default='l')
