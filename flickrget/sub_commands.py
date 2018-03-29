@@ -23,7 +23,7 @@ def tag_search(api, args):
         json_res = api.photos.search(
             tags=','.join(args.tags), page=page,
             extras=','.join([url_tag,'original_format']),
-            tag_mode='all')
+            tag_mode='all', safe_search=args.safe_level)
 
         if not json_res:
             break

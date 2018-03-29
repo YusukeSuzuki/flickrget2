@@ -2,6 +2,7 @@ import argparse
 from .sub_commands import *
 
 COMMON_OPTIONS = [
+    ('--safe-level', int, 1, 'safe search level (1=safe, 2=moderate, 3=restricted, default 1)'),
     ('--max', int, 4000, 'max output num (default 4000 for api limitation reason)'),
 ]
 
